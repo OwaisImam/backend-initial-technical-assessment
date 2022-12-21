@@ -40,9 +40,8 @@ invite us to access it. Please add the following contributors:
 -   `vp-james.booth`
 -   `vp-daniel.gomes`
 
-The task should take approximately an hour and you do not have to use separate
-feature branches for the work, but please create 1 commit per task so that we
-can easily assess the changes.
+You do not have to use separate feature branches for the work, but please create
+1 commit per task so that we can easily assess the changes.
 
 Feel free to supply any accompanyting notes about your design choices in the
 `COMMENTS.md` file, under the respective header.
