@@ -117,11 +117,11 @@ http --session=user-b get  localhost/api/guestbook/my
 
     You will need to do the following:
 
-        - Separate the `submitter_*` fields from the `GuestbookEntry` into their
-          own model.
+    -   Separate the `submitter_*` fields from the `GuestbookEntry` into their
+        own model.
 
-        - Make it possible to look up the associated `GuestbookEntry`s from your
-          new model, and look up your new model from the `GuestbookEntry`.
+    -   Make it possible to look up the associated `GuestbookEntry`s from your
+        new model, and look up your new model from the `GuestbookEntry`.
 
 4.  **Update an entry**
 
@@ -136,10 +136,10 @@ http --session=user-b get  localhost/api/guestbook/my
 
     _Please add notes around your decisions into `COMMENTS.md`_
 
-5.  **Send an report email to the submitter**
+5.  **Generate an hourly report**
 
-    When an entry is submitted, we want to generate a report of all the entries
-    and send this to the submitter.
+    Every hour we want to we want to generate a report of all the entries that
+    have been created.
 
     We are going to pretend that the report takes 60 seconds to generate and
     sometimes times out, but we want to ensure that the report always gets generated.
@@ -147,7 +147,7 @@ http --session=user-b get  localhost/api/guestbook/my
     To complete the task, please generate a JSON list of all current `GuestbookEntry`s
     and write them to the log in resillient, asynchronous manner.
 
-6.  **React to an entry being delete**
+6.  **React to an entry being deleted**
 
     When somebody deletes a `GuestbookEntry`, we want to be able to run any
     tasks associated to the deletion & cleanup.
