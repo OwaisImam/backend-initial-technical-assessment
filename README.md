@@ -36,9 +36,9 @@ it to a high standard.**
 We would like for you to fork this repo and push changes to your fork, then
 invite us to access it. Please add the following contributors:
 
--   `adamholmes-vp`
--   `jamesbooth-vp`
--   `danielgomes-vp`
+-   `vp-adam.holmes`
+-   `vp-james.booth`
+-   `vp-daniel.gomes`
 
 The task should take approximately an hour and you do not have to use separate
 feature branches for the work, but please create 1 commit per task so that we
@@ -80,7 +80,7 @@ http --session=user-a post localhost/api/guestbook/sign \
 http --session=user-a get  localhost/api/guestbook/my
 
 # As user-b
-http --session=user-b post localhost/auth/login \
+http --session=user-b post localhost/auth/login g
     email="user-b@example.com" password="user-b"
 
 http --session=user-a post localhost/api/guestbook/sign \
