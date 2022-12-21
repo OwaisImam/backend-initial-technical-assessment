@@ -6,9 +6,9 @@
 
 -   Spin up with Laravel sail
 
-```bash
-./vendor/bin/sail up -d
-```
+    ```bash
+    ./vendor/bin/sail up -d
+    ```
 
 -   You should then run the demo seeder:
 
