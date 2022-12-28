@@ -1,4 +1,4 @@
-# VP Dev Test
+[#](#) VP Dev Test
 
 ## Setup
 
@@ -79,7 +79,7 @@ http --session=user-a post localhost/api/guestbook/sign \
 http --session=user-a get  localhost/api/guestbook/my
 
 # As user-b
-http --session=user-b post localhost/auth/login g
+http --session=user-b post localhost/auth/login g \
     email="user-b@example.com" password="user-b"
 
 http --session=user-a post localhost/api/guestbook/sign \
@@ -145,8 +145,10 @@ http --session=user-b get  localhost/api/guestbook/my
 
     To complete the task, please generate a JSON list of all current `GuestbookEntry`s
     and write them to the log in resillient, asynchronous manner.
+ 
+    _Please add notes around your decisions into `COMMENTS.md`_
 
-6.  **React to an entry being deleted**
+7.  **React to an entry being deleted**
 
     When somebody deletes a `GuestbookEntry`, we want to be able to run any
     tasks associated to the deletion & cleanup.
@@ -159,3 +161,5 @@ http --session=user-b get  localhost/api/guestbook/my
 
     These need to be called upon deletion of an entry, but we also want to be
     able to easily change these and add more tasks later.
+ 
+    _Please add notes around your decisions into `COMMENTS.md`_
