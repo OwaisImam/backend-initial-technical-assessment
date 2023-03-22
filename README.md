@@ -1,10 +1,30 @@
 [#](#) VP Dev Test
 
-## Setup
+# Setup
 
--   You will need `docker` installing on your machine.
+## Docker
 
--   Spin up with Laravel sail
+You will need `docker` installing on your machine.
+If you're on Windows, we recommend you setup Docker Desktop with WSL2
+
+## Laravel Sail
+
+If you don't have PHP and composer installed on your host machine (why would you when running docker?)
+then run the following from your project root.
+This will install all the needed composer dependencies.
+
+```
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php82-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
+Before proceeding, copy the contents of `.env.example` into `env` and do any necessary adjustments like ports.
+
+Spin up with Laravel sail
 
     ```bash
     ./vendor/bin/sail up -d
@@ -16,8 +36,23 @@
     ./vendor/bin/sail artisan migrate:refresh
     ./vendor/bin/sail artisan db:seed
     ```
+## NPM 
 
-## The application
+You should also run 
+```bash
+    ./vendor/bin/sail npm install
+    ./vendor/bin/sail npm run dev -d
+```
+To be able to access the app from the browser
+This is also an important step or the Feature Tests will fail.
+
+## Running UNIT tests
+
+```bash
+./vendor/bin/sail test tests/
+```
+
+# The application
 
 This is a basic guestbook application.
 
