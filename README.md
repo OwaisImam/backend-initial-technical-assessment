@@ -22,7 +22,7 @@ docker run --rm \
     composer install --ignore-platform-reqs
 ```
 
-Before proceeding, copy the contents of `.env.example` into `env` and do any necessary adjustments like ports.
+Before proceeding, copy the contents of `.env.example` into `.env` and do any necessary adjustments like ports.
 
 Spin up with Laravel sail
 
