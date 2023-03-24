@@ -74,6 +74,8 @@ invite us to access it. Please add the following contributors:
 -   `vp-adam.holmes`
 -   `vp-james.booth`
 -   `vp-daniel.gomes`
+-   `vp-claudio.varandas`
+-   `vp-mario.batista`
 
 You do not have to use separate feature branches for the work, but please create
 1 commit per task so that we can easily assess the changes.
