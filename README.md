@@ -5,7 +5,7 @@
 ## Docker
 
 You will need `docker` installing on your machine.
-If you're on Windows, we recommend you setup Docker Desktop with WSL2
+If you're on Windows, we recommend you set up Docker Desktop with WSL2
 
 ## Laravel Sail
 
@@ -72,7 +72,7 @@ We would like for you to fork this repo and push changes to your fork, then
 invite us to access it. Please add the following contributors:
 
 -   `vp-adam.holmes`
--   `vp-james.booth`
+-   `vp-russ.davey`
 -   `vp-daniel.gomes`
 -   `vp-claudio.varandas`
 -   `vp-mario.batista`
@@ -80,7 +80,7 @@ invite us to access it. Please add the following contributors:
 You do not have to use separate feature branches for the work, but please create
 1 commit per task so that we can easily assess the changes.
 
-Feel free to supply any accompanyting notes about your design choices in the
+Feel free to supply any accompanying notes about your design choices in the
 `COMMENTS.md` file, under the respective header.
 
 We don't need you to over-engineer and spend too long, but we want to see the
@@ -131,7 +131,7 @@ http --session=user-b get  localhost/api/guestbook/my
 
     Currently, the logic for each route is colocated with the route definition.
 
-    If you think it needs refactoring, please do so and and explain what you did
+    If you think it needs refactoring, please do so and explain what you did
     and the reason why in `COMMENTS.md`.
 
 2.  **Completing the form**
