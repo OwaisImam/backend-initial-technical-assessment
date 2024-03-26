@@ -25,30 +25,29 @@ docker run --rm \
 Before proceeding, copy the contents of `.env.example` into `.env` and do any necessary adjustments like ports.
 
 Spin up with Laravel sail
-
-    ```bash
-    ./vendor/bin/sail up -d
-    ```
+```shell
+./vendor/bin/sail up -d
+```
 
 -   You should then run the demo seeder:
 
-    ```bash
-    ./vendor/bin/sail artisan migrate:refresh
-    ./vendor/bin/sail artisan db:seed
-    ```
+```shell
+./vendor/bin/sail artisan migrate:refresh
+./vendor/bin/sail artisan db:seed
+```
 ## NPM 
 
 You should also run 
-```bash
-    ./vendor/bin/sail npm install
-    ./vendor/bin/sail npm run dev -d
+```shell
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run dev -d
 ```
 To be able to access the app from the browser
 This is also an important step or the Feature Tests will fail.
 
 ## Running UNIT tests
 
-```bash
+```shell
 ./vendor/bin/sail test tests/
 ```
 
@@ -95,9 +94,9 @@ long-run in `COMMENTS.md`!
 
 ### Useful information
 
-```bash
+```shell
 # this requires `httpie` - https://httpie.io/
-http get  localhost/api/guestbook
+http get localhost/api/guestbook
 
 http post localhost/api/guestbook/sign \
     title="Wowsers..." content="This is amazing" name="Gatesy" real_name="Gill Bates" email="retired@msft.com"
@@ -129,7 +128,7 @@ http --session=user-b get  localhost/api/guestbook/my
 
 1.  **Routing logic**
 
-    Currently, the logic for each route is colocated with the route definition.
+    Currently, the logic for each route is co-located with the route definition.
 
     If you think it needs refactoring, please do so and explain what you did
     and the reason why in `COMMENTS.md`.
@@ -181,11 +180,11 @@ http --session=user-b get  localhost/api/guestbook/my
     sometimes times out, but we want to ensure that the report always gets generated.
 
     To complete the task, please generate a JSON list of all current `GuestbookEntry`s
-    and write them to the log in resillient, asynchronous manner.
+    and write them to the log in a resilient, asynchronous manner.
  
     _Please add notes around your decisions into `COMMENTS.md`_
 
-7.  **React to an entry being deleted**
+6. **React to an entry being deleted**
 
     When somebody deletes a `GuestbookEntry`, we want to be able to run any
     tasks associated to the deletion & cleanup.
