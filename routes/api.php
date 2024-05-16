@@ -3,6 +3,7 @@
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\GuestbookEntry;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,7 +38,7 @@ Route::group([
                 return response("Not logged in", 401);
 
             return GuestbookEntry::where([
-                "submitter_email" => $request->user()?->email
+                "user_id" => $request->user()?->id
             ])->get();
         },
     ]);
@@ -70,6 +71,22 @@ Route::group([
                 'submitter_real_name'    => $request->real_name,
             ]);
 
+            return $entry;
+        },
+    ]);
+
+    Route::put('/update/{id}', [
+        'as' => 'updateRecord',
+        'middleware' => [\App\Http\Middleware\JsonContentType::class],
+        function (Request $request) {
+            $entry = GuestbookEntry::where('id', $request->id)->where('user_id', Auth::user()->id)->update([
+                'title'                  => $request->title,
+                'content'                => $request->content,
+            ]);
+            if(!$entry)
+            {
+                return response("Invalid entry id", 500);
+            }
             return $entry;
         },
     ]);
