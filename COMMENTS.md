@@ -6,7 +6,7 @@ I have change the routiong logic becuase It looks clearner, easy to handle and t
 
 ## 2. Completing the form
 
-_Please add any notes for task 2 here_
+I have completed the form by linking the form action to the route, and make the function with the exceptional handling.
 
 ## 3. Separating the submitter information from the `GuestbookEntry`
 

@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\{Auth, Route};
 
 Route::get('/', [GuestController::class, 'index'])->name('index');
 Route::get('/submit', [GuestController::class, 'submitForm'])->name('submitForm');
+Route::post('/submit', [GuestController::class, 'submit'])->name('submit');
