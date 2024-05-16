@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\GuestbookEntryDeleting;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\GuestbookEntry;
@@ -53,6 +54,9 @@ Route::group([
     Route::delete('/{entry}', [
         'as' => 'delete',
         function (GuestbookEntry $entry) {
+
+            event(new GuestbookEntryDeleting($entry));
+
             $entry->delete();
 
             return response("Deleted");
@@ -66,9 +70,7 @@ Route::group([
             $entry = GuestbookEntry::create([
                 'title'                  => $request->title,
                 'content'                => $request->content,
-                'submitter_email'        => $request->email,
-                'submitter_display_name' => $request->name,
-                'submitter_real_name'    => $request->real_name,
+                'user_id'                => Auth::user()->id,
             ]);
 
             return $entry;

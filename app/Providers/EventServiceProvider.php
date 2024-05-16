@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\GuestbookEntryDeleting;
+use App\Tasks\GenerateNewReport;
+use App\Tasks\NotifyUserOfDeletion;
+use App\Tasks\PerformCleanupTasks;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +22,11 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        GuestbookEntryDeleting::class => [
+            GenerateNewReport::class,
+            NotifyUserOfDeletion::class,
+            PerformCleanupTasks::class
+        ]
     ];
 
     /**
