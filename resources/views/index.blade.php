@@ -6,7 +6,7 @@
 
         <div class="flex flex-col gap-2">
             @foreach ($entries->all() as $entry)
-                <x-guestbook.entry :title="$entry->title" :content="$entry->content" :email="$entry->submitter_email" :displayName="$entry->submitter_display_name" />
+                <x-guestbook.entry :title="$entry->title" :content="$entry->content" :email="$entry->user->email" :displayName="$entry->user->display_name" />
             @endforeach
         </div>
 

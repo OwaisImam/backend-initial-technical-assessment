@@ -15,30 +15,30 @@ class DemoSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+       $userB = User::create([
             'email'        => 'user-a@example.com',
             'password'     => Hash::make('user-a'),
+            'display_name' => 'RocketMan',
+            'real_name'    => 'Melon Dusk',
         ]);
 
-        User::create([
+        $userA = User::create([
             'email'        => 'user-b@example.com',
             'password'     => Hash::make('user-b'),
+            'display_name' => 'TheBez',
+            'real_name'    => 'Beff Jezos',
         ]);
 
         GuestbookEntry::create([
             'title'                  => 'This is really amazing',
             'content'                => 'Much better than Amazon',
-            'submitter_email'        => 'the-bez@amazon.com',
-            'submitter_display_name' => 'TheBez',
-            'submitter_real_name'    => 'Beff Jezos',
+            'user_id' => $userA->id
         ]);
 
         GuestbookEntry::create([
             'title'                  => 'Wow.',
             'content'                => 'This is so great that it sends me to space',
-            'submitter_email'        => 'egomaniac@tesla.com',
-            'submitter_display_name' => 'RocketMan',
-            'submitter_real_name'    => 'Melon Dusk',
+            'user_id' => $userB->id
         ]);
     }
 }

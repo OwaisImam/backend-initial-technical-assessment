@@ -14,8 +14,11 @@ class GuestbookEntry extends Model
     protected $fillable = [
         'title',
         'content',
-        'submitter_email',
-        'submitter_display_name',
-        'submitter_real_name',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

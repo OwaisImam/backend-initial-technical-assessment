@@ -1,24 +1,25 @@
 <x-layout>
-    @if(session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
+    @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
     @endif
 
     <div class="flex">
-        <form name="addEntryForm" id="addEntryForm" class="flex flex-col gap-4 p-8 rounded-lg shadow-sm bg-white">
+        <form name="addEntryForm" id="addEntryForm" action="{{ route('submit') }}" method="post"
+            class="flex flex-col gap-4 p-8 rounded-lg shadow-sm bg-white">
             <h1 class="text-2xl font-bold border-b-2 pb-1 border-violet-300">
                 Submit an entry
             </h1>
-
+            @csrf
             @if ($errors->any())
-            <div class="flex padding-2 rounded bg-red-200">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+                <div class="flex padding-2 rounded bg-red-200">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
 
             <div class="flex flex-col gap-1">
@@ -34,7 +35,8 @@
 
                 <div class="flex items-start">
                     <label for="contentInput" class="w-32">Content</label>
-                    <textarea id="contentInput" name="content" type="text" name="title" required="" class="border p-2 flex flex-1 min-h-[100px]"></textarea>
+                    <textarea id="contentInput" name="content" type="text" name="title" required=""
+                        class="border p-2 flex flex-1 min-h-[100px]"></textarea>
                 </div>
             </div>
 
