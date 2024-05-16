@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuestController;
 use Illuminate\Http\Request;
 use App\Models\GuestbookEntry;
 use Illuminate\Support\Facades\{Auth, Route};
@@ -15,17 +16,5 @@ use Illuminate\Support\Facades\{Auth, Route};
 |
 */
 
-Route::get('/', [
-    "as" => "index",
-    function () {
-        $entries = GuestbookEntry::all();
-        return view('index', ["entries" => $entries]);
-    }
-]);
-
-Route::get('/submit', [
-    "as" => "submit",
-    function () {
-        return view('form');
-    }
-]);
+Route::get('/', [GuestController::class, 'index'])->name('index');
+Route::get('/submit', [GuestController::class, 'submitForm'])->name('submitForm');

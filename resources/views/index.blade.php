@@ -6,12 +6,12 @@
 
         <div class="flex flex-col gap-2">
             @foreach ($entries->all() as $entry)
-            <x-guestbook.entry :title="$entry->title" :content="$entry->content" :email="$entry->submitter_email" :displayName="$entry->submitter_display_name" />
+                <x-guestbook.entry :title="$entry->title" :content="$entry->content" :email="$entry->submitter_email" :displayName="$entry->submitter_display_name" />
             @endforeach
         </div>
 
         <div class="flex">
-            <a href="{{ route('submit') }}" class="block p-3 rounded bg-violet-700 text-violet-100 font-bold">
+            <a href="{{ route('submitForm') }}" class="block p-3 rounded bg-violet-700 text-violet-100 font-bold">
                 Add an entry
             </a>
         </div>

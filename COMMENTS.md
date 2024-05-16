@@ -2,7 +2,7 @@
 
 ## 1. Routing logic
 
-_Please add any notes for task 2 here_
+I have change the routiong logic becuase It looks clearner, easy to handle and test, and for reusablity.
 
 ## 2. Completing the form
 
